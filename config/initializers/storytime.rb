@@ -101,7 +101,7 @@ Storytime.configure do |config|
 
   # AWS Secret Key to use for file uploads.
   # config.aws_secret_key = ENV['AWS_SECRET_KEY']
-  config.aws_secret_key = ENV['STORYTIME_AWS_SECRET_KEY']
+  config.aws_secret_access_key = ENV['STORYTIME_AWS_SECRET_KEY']
 
   # Superclass for Storytime::ApplicationController
   # Defaults to the host app's ApplicationController
