@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem "mini_magick"
 # Rails Content Management System & blogging engine
 gem "storytime"
+# Heroku-friendly configuration using ENV and a single YAML file.
+gem "figaro", ">= 1.0.0"
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
