@@ -6,13 +6,13 @@ Storytime.configure do |config|
   # Storytime's mount point within the host app.
   # config.dashboard_namespace_path = '/storytime'
 
-  # Path used to sign users in. 
+  # Path used to sign users in.
   # config.login_path = '/users/sign_in'
 
-  # Path used to sign users out. 
-  # config.logout_path = '/users/sign_out'  
+  # Path used to sign users out.
+  # config.logout_path = '/users/sign_out'
 
-  # Path used to register a new user. 
+  # Path used to register a new user.
   # config.registration_path = "/users/sign_up"
 
   # Method used for Storytime user logout path.
@@ -73,16 +73,16 @@ Storytime.configure do |config|
   # Hook for handling notification delivery when publishing content.
   # Accepts either a Lambda or Proc which can be set up to schedule
   # an ActiveJob (Rails 4.2+), for example:
-  # 
+  #
   # config.on_publish_with_notifications = Proc.new do |post|
   #   wait_until = post.published_at + 1.minute
   #   StorytimePostNotificationJob.set(wait_until: wait_until).perform_later(post.id)
   # end
-  # 
+  #
   ### In app/jobs/storytime_post_notification_job.rb:
   # class StorytimePostNotificationJob < ActiveJob::Base
   #   queue_as :mailers
-  # 
+  #
   #   def perform(post_id)
   #     Storytime::PostNotifier.send_notifications_for(post_id)
   #   end
@@ -93,12 +93,14 @@ Storytime.configure do |config|
   config.enable_file_upload = true
 
   # AWS Region to use for file uploads.
-  # config.aws_region = ENV['STORYTIME_AWS_REGION']
+  config.aws_region = ENV['STORYTIME_AWS_REGION']
 
   # AWS Access Key ID to use for file uploads.
+  config.aws_access_key_id = ENV['AWS_ACCESS_KEY']
   # config.aws_access_key_id = ENV['STORYTIME_AWS_ACCESS_KEY_ID']
 
   # AWS Secret Key to use for file uploads.
+  config.aws_secret_key = ENV['AWS_SECRET_KEY']
   # config.aws_secret_key = ENV['STORYTIME_AWS_SECRET_KEY']
 
   # Superclass for Storytime::ApplicationController
@@ -107,7 +109,7 @@ Storytime.configure do |config|
 
   if Rails.env.production?
     config.media_storage = :s3
-    config.s3_bucket = 'storytime428'
+    config.s3_bucket = ENV["AWS_BUCKET"]
   else
     config.media_storage = :file
   end
