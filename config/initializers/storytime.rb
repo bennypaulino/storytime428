@@ -96,12 +96,12 @@ Storytime.configure do |config|
   config.aws_region = ENV['STORYTIME_AWS_REGION']
 
   # AWS Access Key ID to use for file uploads.
-  config.aws_access_key = ENV['AWS_ACCESS_KEY']
-  # config.aws_access_key_id = ENV['STORYTIME_AWS_ACCESS_KEY_ID']
+  # config.aws_access_key = ENV['AWS_ACCESS_KEY']
+  config.aws_access_key_id = ENV['STORYTIME_AWS_ACCESS_KEY_ID']
 
   # AWS Secret Key to use for file uploads.
-  config.aws_secret_key = ENV['AWS_SECRET_KEY']
-  # config.aws_secret_key = ENV['STORYTIME_AWS_SECRET_KEY']
+  # config.aws_secret_key = ENV['AWS_SECRET_KEY']
+  config.aws_secret_key = ENV['STORYTIME_AWS_SECRET_KEY']
 
   # Superclass for Storytime::ApplicationController
   # Defaults to the host app's ApplicationController
