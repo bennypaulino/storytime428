@@ -96,7 +96,7 @@ Storytime.configure do |config|
   config.aws_region = ENV['STORYTIME_AWS_REGION']
 
   # AWS Access Key ID to use for file uploads.
-  config.aws_access_key_id = ENV['AWS_ACCESS_KEY']
+  config.aws_access_key = ENV['AWS_ACCESS_KEY']
   # config.aws_access_key_id = ENV['STORYTIME_AWS_ACCESS_KEY_ID']
 
   # AWS Secret Key to use for file uploads.
